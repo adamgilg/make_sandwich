@@ -1,0 +1,7 @@
+<%= simple_form_for @sandwich do |f| %>
+  <%= f.input :name %>
+  <%= f.fields_for @sandwich.sandwich_ingredients  do |t| %>
+    <%= t.input :ingredient_id, collection: @ingredients %>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>  
