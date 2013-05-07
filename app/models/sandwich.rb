@@ -1,7 +1,9 @@
 class Sandwich < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :description
 
-  belongs_to :user
-  has_many :sandwich_ingredients
-  accepts_nested_attributes_for :sandwich_ingredients
+  validates :name, presence: true
+
+  # belongs_to :user
+  # has_many :sandwich_ingredients
+  # accepts_nested_attributes_for :sandwich_ingredients, reject_if: :all_blank
 end
