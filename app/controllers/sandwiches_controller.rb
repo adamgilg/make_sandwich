@@ -13,4 +13,8 @@ class SandwichesController < ApplicationController
       flash[:alert] = "Problem saving sandwich"
     end
   end
+
+  def index
+    @sandwiches = Sandwich.all
+  end
 end

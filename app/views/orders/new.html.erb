@@ -1,0 +1,4 @@
+<%= simple_form_for @order do |f| %>
+  <%= f.input :sandwich_id, collection: Sandwich.all %>
+  <%= f.button :submit %>
+<% end %>
