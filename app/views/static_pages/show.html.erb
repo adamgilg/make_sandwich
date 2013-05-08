@@ -1,5 +1,10 @@
 <h1>make_sandwich</h1>
 <h3>Welcome.</h3>
 Would you like to order a sandwich?
-<p><%= link_to "Yes.", sandwiches_path %></p>
-<p><a href="https://google.com">No.</a></p>
+<% if user_signed_in? %>
+  <p><%= link_to "Yes.", sandwiches_path, class: "btn btn-primary" %></p>
+  <p><a class="btn btn-warning" href="https://google.com">No.</a></p>
+  <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+<% else %>
+  <p><%= link_to "Sign in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> first!</p>
+<% end %>
