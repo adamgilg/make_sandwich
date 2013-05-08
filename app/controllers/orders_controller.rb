@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id
     if @order.save
       SandwichMailer.send_order(current_user, @order).deliver
-      flash[:notice] = "Order successfully saved"
+      flash[:notice] = "Order successfully saved and sent"
       redirect_to root_url
     else
       flash[:alert] = "Problem saving order"
