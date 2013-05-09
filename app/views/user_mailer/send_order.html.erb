@@ -5,9 +5,8 @@
   </head>
   <body>
     <h1>This is a sandwich order for <%= @user.email %></h1>
-    <p>
-      <%= @sandwich.name %>
-      <%= @sandwich.description %>
-    </p>
+    <p>You ordered <strong><%= @sandwich.name %></strong></p>
+    <p><%= @sandwich.description %></p>
+    <p>Enjoy!</p>
   </body>
 </html>
