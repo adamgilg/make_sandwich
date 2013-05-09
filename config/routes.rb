@@ -3,5 +3,6 @@ MakeSandwich::Application.routes.draw do
   resources :static_pages, only: :show
   resources :sandwiches
   resources :orders
+  resources :quotes
   root to: "static_pages#show"
 end

@@ -9,8 +9,10 @@ class SandwichesController < ApplicationController
     @sandwich = Sandwich.new(params[:sandwich])
     if @sandwich.save
       flash[:notice] = "Sandwich successfully saved"
+      redirect_to :back
     else
       flash[:alert] = "Problem saving sandwich"
+      redirect_to :back
     end
   end
 

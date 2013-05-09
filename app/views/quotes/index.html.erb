@@ -1,0 +1,15 @@
+<div id="header">
+  Sent along with your sandwich order will be a randomly selected quote from this page. Think of it as payment for your sandwich. 
+</div>
+<div class="row">
+  <% @quotes.each do |quote| %>
+    <div class="well span3">
+      <div id="quote<%= quote.id %>-body">
+        <%= quote.body %>
+      </div>
+      <div id="quote<%= quote.id %>-author">
+        <%= quote.author %>
+      </div>
+    </div>
+  <% end %>
+</div>

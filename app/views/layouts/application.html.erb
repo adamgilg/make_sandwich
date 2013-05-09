@@ -8,6 +8,7 @@
 </head>
 <body>
   <div class="container">
+    <%= render partial: "shared/navbar" %>
     <% flash.each do |key, value| %>
       <div class="<%= flash_class(key) %>">
         <%= value %>
@@ -15,6 +16,11 @@
       </div>
     <% end %>
     <%= yield %>
+
+    <% if user_signed_in? %>
+      <%= render partial: "shared/new_quote_modal", locals: { new_quote: Quote.new } %>
+      <%= render partial: "shared/new_sandwich_modal", locals: { new_sandwich: Sandwich.new } %>
+    <% end %>
   </div>
 
 </body>

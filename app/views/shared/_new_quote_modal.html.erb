@@ -1,0 +1,16 @@
+<div id="new-quote" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="new-quote-label" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <h3 id="new-quote-label">Add a new quote.</h3>
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for new_quote do |f| %>
+      <%= f.input :author, input_html: { class: "span6" } %>
+      <%= f.input :body, as: :text, class: "modal-description-field", input_html: { class: "span6" } %>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <%= f.button :submit, class: "btm btn-primary" %>
+  </div>
+  <% end %>
+</div>
