@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 group :development do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'letter_opener'
 end
 
 group :production do
