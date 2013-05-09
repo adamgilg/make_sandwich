@@ -1,4 +1,6 @@
 class SandwichesController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:index]
+  
   def new
     @sandwich = Sandwich.new
     # @sandwich.sandwich_ingredients.build

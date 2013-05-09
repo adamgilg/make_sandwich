@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  skip_before_filter :authenticate_user!, only: [:index]
   def create
     @quote = Quote.new(params[:quote])
     if @quote.save
