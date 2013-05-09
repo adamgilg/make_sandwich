@@ -4,9 +4,12 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-    <h1>This is a sandwich order for <%= @user.email %></h1>
-    <p>You ordered <strong><%= @sandwich.name %></strong></p>
-    <p><%= @sandwich.description %></p>
-    <p>Enjoy!</p>
+    <p>This is a sandwich order for <strong><%= @user.email %></strong></p>
+    <p>They would like a <strong><%= @sandwich.name %></strong> sandwich</p>
+    <p>The deets: <%= @sandwich.description %></p>
+    <p>Get on it!</p>
+    <hr>
+    <div id="quote-body"><%= @quote.body %></div>
+    <div id="quote-author"><%= @quote.author %></div>
   </body>
 </html>
