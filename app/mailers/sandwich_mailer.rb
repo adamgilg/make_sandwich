@@ -1,9 +1,9 @@
 class SandwichMailer < ActionMailer::Base
   default from: "make@sandwich.com"
 
-  def send_order(current_user, order)
+  def send_order(current_user, sandwich)
     @user = current_user
-    @order = order
+    @sandwich = sandwich
     mail(to: @user.email, subject: "Sandwich!")
   end
 end
