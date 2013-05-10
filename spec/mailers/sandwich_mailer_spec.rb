@@ -8,7 +8,7 @@ describe SandwichMailer do
     let(:mail) { SandwichMailer.send_order(user, sandwich, quote) }
 
     it 'has the correct subject' do
-      mail.subject.should == 'Sandwich!'
+      mail.subject.should == 'Sandwich for adam@example.com!'
     end
 
     it 'has the correct from address' do
@@ -16,7 +16,7 @@ describe SandwichMailer do
     end
 
     it 'has the correct to address' do
-      mail.to.should == [user.email]
+      mail.to.should == ["make_sandwich@generalthings.com"]
     end
 
     it "sends the email" do
@@ -26,8 +26,6 @@ describe SandwichMailer do
 
     describe 'email body' do
       it 'knows about the correct sandwich' do
-      #   last_delivery = ActionMailer::Base.deliveries.last
-      #   last_delivery.body.raw_source.should include "Vegan"
         mail.body.encoded.should include(sandwich.name)
       end
 

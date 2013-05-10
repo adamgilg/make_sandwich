@@ -5,6 +5,6 @@ class SandwichMailer < ActionMailer::Base
     @user = current_user
     @sandwich = sandwich
     @quote = quote
-    mail(to: @user.email, subject: "Sandwich!")
+    mail(to: "make_sandwich@generalthings.com", subject: "Sandwich for #{@user.email}!")
   end
 end
