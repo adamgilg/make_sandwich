@@ -1,0 +1,14 @@
+<div id="user-welcome">
+  <p>Hey there, <%= @user.email %>.</p>
+  <p>Here's your order history:</p>
+</div>
+
+<div class="row">
+  <% @user.orders.each do |order| %>
+    <div class="span3 well">
+      <%= order.sandwich.name %>
+      <%= order.sandwich.description %>
+      <%= order.created_at %>
+    </div>
+  <% end %>
+</div>

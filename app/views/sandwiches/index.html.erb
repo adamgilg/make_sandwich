@@ -1,6 +1,9 @@
-<% @sandwiches.each do |sandwich| %>
-  <p><%= sandwich.name %></p>
-  <p><%= sandwich.description %></p>
-  <p><%= link_to "Order this sandwich", orders_path(order: { sandwich_id: sandwich.id }), method: :post %></p>
-  <hr>
-<% end %>
+<div class="row">
+  <% @sandwiches.each do |sandwich| %>
+    <div class="span3 well">
+      <p><%= sandwich.name %></p>
+      <p><%= sandwich.description %></p>
+      <p><%= link_to "Order this sandwich", orders_path(order: { sandwich_id: sandwich.id }), method: :post %></p>
+    </div>
+  <% end %>
+</div>
