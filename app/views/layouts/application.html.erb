@@ -7,23 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <div class="bg"></div> 
+  
   <%= render partial: "shared/navbar" %>
 
   <div class="container">
-    <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-        <%= value %>
-        <a class="close" data-dismiss="alert">&#215;</a>
-      </div>
-    <% end %>
-    
-    <%= yield %>
+    <div id="content">
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+          <%= value %>
+          <a class="close" data-dismiss="alert">&#215;</a>
+        </div>
+      <% end %>
+      
+      <%= yield %>
+    </div>
 
-    <% if user_signed_in? %>
-      <%= render partial: "shared/new_quote_modal", locals: { new_quote: Quote.new } %>
-      <%= render partial: "shared/new_sandwich_modal", locals: { new_sandwich: Sandwich.new } %>
-    <% end %>
   </div>
+  <% if user_signed_in? %>
+    <%= render partial: "shared/new_quote_modal", locals: { new_quote: Quote.new } %>
+    <%= render partial: "shared/new_sandwich_modal", locals: { new_sandwich: Sandwich.new } %>
+  <% end %>
 
 </body>
 </html>

@@ -4,8 +4,8 @@
     <h3>Welcome.</h3>
     <p>Would you like to order a sandwich?</p>
     <% if user_signed_in? %>
-      <p><%= link_to "Yes.", sandwiches_path, class: "btn btn-primary", id: "order-sandwich-button", method: :get, remote: true %></p>
-      <p><a class="btn btn-danger" href="http://xkcd.com/149/">No.</a></p>
+      <p><%= link_to "Yes.", sandwiches_path, class: "btn btn-success s-btn", id: "order-sandwich-button", method: :get, remote: true %></p>
+      <p><a class="btn btn-danger s-btn" href="http://xkcd.com/149/">No.</a></p>
     <% else %>
       <p><%= link_to "Sign in", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> first!</p>
     <% end %>
