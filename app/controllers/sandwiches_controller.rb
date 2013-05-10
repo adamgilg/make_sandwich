@@ -20,5 +20,9 @@ class SandwichesController < ApplicationController
 
   def index
     @sandwiches = Sandwich.all
+    if request.xhr?
+      render "shared/_order_sandwiches", layout: false
+    end
+
   end
 end

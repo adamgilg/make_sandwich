@@ -6,7 +6,7 @@
   <div class="modal-body">
     <%= simple_form_for new_sandwich do |f| %>
       <%= f.input :name, input_html: { class: "span6" } %>
-      <%= f.input :description, as: :text, class: "modal-description-field", input_html: { class: "span6", cols: 40, rows: 20 } %>
+      <%= f.input :description, as: :text, input_html: { class: "span6", cols: 40, rows: 20 } %>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

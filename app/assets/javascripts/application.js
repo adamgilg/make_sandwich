@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require_tree .
 // = require bootstrap
+
+$(function() {
+  $("#order-sandwich-button").on("ajax:success", function(event, data) {
+    $("#sandwich-container").html(data);
+  });
+});
